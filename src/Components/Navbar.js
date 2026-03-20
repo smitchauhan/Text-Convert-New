@@ -13,7 +13,7 @@ function Navbar(props){
     <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/Text-Convert-New">Home</Link>
+          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" aria-current="page" to="/about">{props.newvar}</Link>
