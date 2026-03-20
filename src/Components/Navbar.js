@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 function Navbar(props){
 
 
@@ -14,21 +13,24 @@ function Navbar(props){
     <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">{props.newvar}</a>
+          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
+          <Link className="nav-link" aria-current="page" to="/about">{props.newvar}</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
+          <Link className="nav-link" to="/contact">Contact</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/news">News</Link>
         </li>
    
       </ul>
  
     </div>
-      <div className={`form-check form-switch text-${props.mode == 'light' ? 'dark' :'light'}`}>
+      <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' :'light'}`}>
   <input className="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" onClick={props.togglemode} />
-  <label className="form-check-label" htmlFor="switchCheckDefault">{`${props.mode == 'light' ? 'dark' : 'light'} Mode`}</label>
+  <label className="form-check-label" htmlFor="switchCheckDefault">{`${props.mode === 'light' ? 'dark' : 'light'} Mode`}</label>
 </div>
   </div>
 </nav>
