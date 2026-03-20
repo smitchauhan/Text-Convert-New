@@ -21,18 +21,24 @@ export default function Textutiles(props) {
         handleCopy(removespace);
         setText(removespace);
     }
+    const TitleCase = () => {
+    let newText = text.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    handleCopy(newText);
+    setText(newText);
+}
     const clicktoonchange = (event) => {
         setText(event.target.value);
     }
 
-    const [text, setText] = useState('Enter text Here...')
+    const [text, setText] = useState('')
     return (
         <div>
             <div className="my-4">
                 <h1>{props.headline}</h1>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="12" value={text} placeholder={text} onChange={clicktoonchange}></textarea>
+                <textarea className="form-control" id="exampleFormControlTextarea1" rows="12" value={text} placeholder="Enter Text Here..." onChange={clicktoonchange}></textarea>
                 <button type="button" className="btn btn-primary mt-3" onClick={Uppercase}>Convert to LowerCase</button>
                 <button type="button" className="btn btn-secondary mt-3 ms-3" onClick={LowerCase}>Convert to Uppercase</button>
+                <button type="button" className="btn btn-warning mt-3 ms-3" onClick={TitleCase}>Convert to Title Case </button>
                 <button type="button" className="btn btn-success mt-3 ms-3" onClick={Remvoespace}>Convert Space to '-' </button>
             </div>
         </div>
